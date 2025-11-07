@@ -13,10 +13,30 @@
     </style>
   </head>
   <body>
-    <div>
-      <h1>ページ1</h1>
-      <img class="photo-1" src="photo1.png" />
-      <a href="./index.html">index</a>
+    <div class="container">
+      <h1 id="item-title">Details</h1>
+      <div class="detail-content">
+        <p><strong>Item ID:</strong> <span id="item-id">-</span></p>
+        <p><strong>Description:</strong></p>
+        <p id="item-description">
+          This is a detailed view showing information about the selected item
+          from the list. The View Transition API allows for smooth transitions
+          between this detail page and the list view.
+        </p>
+        <p><strong>Additional Information:</strong></p>
+        <p>
+          You can navigate between the list and detail pages to observe the
+          @view-transition animation in action. The transitions are
+          automatically handled by the CSS @view-transition rule with
+          navigation: auto.
+        </p>
+        <p><strong>Content Type:</strong> Text-only demonstration</p>
+        <p>
+          <strong>Purpose:</strong> Testing View Transition API functionality
+        </p>
+      </div>
+
+      <a href="./index.html" class="back-link">← Back to List</a>
     </div>
     <script type="module" src="src/main.js"></script>
   </body>
