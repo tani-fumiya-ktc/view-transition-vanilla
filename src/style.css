@@ -1,3 +1,36 @@
+@keyframes fade-in {
+	from {
+		opacity: 0;
+		scale: 0.95;
+	}
+	to {
+		opacity: 1;
+		scale: 1;
+	}
+}
+
+@keyframes fade-out {
+	from {
+		opacity: 1;
+		scale: 1;
+	}
+	to {
+		opacity: 0;
+		scale: 0.95;
+	}
+}
+
+/* View Transition API - MPA用設定 */
+::view-transition-old(photo-example-1),
+::view-transition-old(photo-example-2) {
+	animation: fade-out 0.4s ease-out forwards;
+}
+
+::view-transition-new(photo-example-1),
+::view-transition-new(photo-example-2) {
+	animation: fade-in 0.4s ease-out forwards;
+}
+
 :root {
 	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
@@ -8,9 +41,197 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
 body {
 	margin: 0;
 	display: flex;
+	min-height: 100vh;
+	background: #ffffff;
+}
+
+.container {
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 40px 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+h1 {
+	font-size: 2.5rem;
+	margin-bottom: 10px;
+	color: #333333;
+	text-align: center;
+}
+
+h2 {
+	font-size: 1.8rem;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	color: #333;
+}
+
+h3 {
+	font-size: 1.3rem;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	color: #444;
+}
+
+p {
+	color: #555;
+	line-height: 1.8;
+}
+
+ul {
+	margin-left: 20px;
+	color: #555;
+}
+
+li {
+	margin-bottom: 8px;
+	line-height: 1.6;
+}
+
+.subtitle {
+	font-size: 1.1rem;
+	color: #666666;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+/* Index page styles */
+main {
+	width: 100%;
+	padding: 40px 20px;
+}
+
+.photo-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 300px);
+	gap: 30px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.photo-link {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-link:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.photo-thumb {
+	display: block;
+	width: 100%;
+	height: 120px;
+	object-fit: contain;
+	background: #f5f5f5;
+}
+
+.photo-meta {
+	padding: 15px;
+	background: white;
+}
+
+.i-title {
+	font-size: 1.1rem;
+	font-weight: 600;
+	margin: 0 0 5px 0;
+	color: #333;
+}
+
+.i-location {
+	font-size: 0.9rem;
+	color: #999;
+	margin: 0 0 10px 0;
+}
+
+.btn {
+	padding: 8px 16px;
+	background: #333;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	font-size: 0.9rem;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+.btn:hover {
+	background: #555;
+}
+
+/* Detail page styles */
+.detail-action {
+	margin-bottom: 30px;
+}
+
+.button-close {
+	display: inline-block;
+	padding: 10px 20px;
+	background: #f0f0f0;
+	color: #333;
+	border: none;
+	border-radius: 4px;
+	font-size: 0.95rem;
+	cursor: pointer;
+	transition: background 0.3s ease;
+	text-decoration: none;
+}
+
+.detail-layout {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+	align-items: start;
+	margin-bottom: 20px;
+}
+
+.detail-image-container {
+	display: flex;
+	justify-content: center;
+}
+
+.photo-detail {
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+	border-radius: 4px;
+}
+
+.photo-details {
+	padding: 20px;
+}
+
+.i-sub {
+	font-size: 0.95rem;
+	color: #999;
+	margin: 5px 0 15px 0;
+}
+
+.i-desc {
+	font-size: 0.95rem;
+	color: #555;
+	line-height: 1.8;
+	margin: 0;
+}
+
+@media (max-width: 768px) {
+	.detail-layout {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
 }
 
 #app {

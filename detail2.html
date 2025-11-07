@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="src/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>詳細ページ 2 - View Transition API Demo</title>
+    <style>
+      @view-transition {
+        navigation: auto;
+      }
+
+      /* 写真1 */
+      .photo-1 {
+        view-transition-name: photo-example-1;
+        contain: paint;
+      }
+
+      /* 写真2 */
+      .photo-2 {
+        view-transition-name: photo-example-2;
+        contain: paint;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="detail-action">
+        <a href="./index.html" class="btn button-close">一覧へもどる</a>
+      </div>
+      <div class="detail-layout">
+        <div class="detail-image-container">
+          <img class="photo-2" src="/index_big.png" alt="別の風景" />
+        </div>
+        <div class="photo-details">
+          <p class="i-title">別の風景</p>
+          <p class="i-sub">別の場所</p>
+          <p class="i-desc">
+            このサンプルは、View Transition APIを使用して複数の画像間をスムーズに遷移するデモンストレーションです。各画像に異なるview-transition-nameを割り当てることで、それぞれの画像が独立したアニメーションで切り替わります。<br />
+            CSSのcontain: paintプロパティを使用することで、パフォーマンスを最適化し、ブラウザが各要素を独立して処理できるようにしています。
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,32 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="src/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>view transition index</title>
+    <title>View Transition API Demo</title>
     <style>
       @view-transition {
         navigation: auto;
       }
+
+      /* 写真1 */
+      .photo-1 {
+        view-transition-name: photo-example-1;
+        contain: paint;
+      }
+
+      /* 写真2 */
+      .photo-2 {
+        view-transition-name: photo-example-2;
+        contain: paint;
+      }
     </style>
   </head>
   <body>
-    <div class="container">
-      <h1>Index</h1>
-      <ul class="item-list">
-        <li>
-          <a href="./page-1.html?id=1"
-            >Item 1 - Detailed Information Available</a
-          >
-        </li>
-        <li><a href="./page-1.html?id=2">Item 2 - Click to View Details</a></li>
-        <li><a href="./page-1.html?id=3">Item 3 - More Information</a></li>
-        <li><a href="./page-1.html?id=4">Item 4 - Additional Content</a></li>
-        <li><a href="./page-1.html?id=5">Item 5 - Extended Description</a></li>
-      </ul>
-    </div>
-    <script type="module" src="src/main.js"></script>
+    <main>
+      <!-- 一覧画面 -->
+      <div id="view-index">
+        <h1>Pickup Pictures</h1>
+        <ul class="photo-list">
+          <li>
+            <a href="./detail1.html" class="photo-link">
+              <img
+                class="photo-1"
+                src="/index.png"
+                alt="グリフィス天文台からの景観"
+              />
+              <div class="photo-meta">
+                <p class="i-title">グリフィス天文台からの景観</p>
+                <p class="i-location">ロサンゼルス</p>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <a href="./detail2.html" class="photo-link">
+              <img class="photo-2" src="/index.png" alt="別の風景" />
+              <div class="photo-meta">
+                <p class="i-title">別の風景</p>
+                <p class="i-location">別の場所</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </main>
   </body>
 </html>

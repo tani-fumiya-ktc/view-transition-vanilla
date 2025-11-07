@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="src/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>詳細ページ 1 - View Transition API Demo</title>
+    <style>
+      @view-transition {
+        navigation: auto;
+      }
+
+      /* 写真1 */
+      .photo-1 {
+        view-transition-name: photo-example-1;
+        contain: paint;
+      }
+
+      /* 写真2 */
+      .photo-2 {
+        view-transition-name: photo-example-2;
+        contain: paint;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="detail-action">
+        <a href="./index.html" class="btn button-close">一覧へもどる</a>
+      </div>
+      <div class="detail-layout">
+        <div class="detail-image-container">
+          <img class="photo-1" src="/index_big.png" alt="グリフィス天文台からの景観" />
+        </div>
+        <div class="photo-details">
+          <p class="i-title">グリフィス天文台からの景観</p>
+          <p class="i-sub">ロサンゼルス</p>
+          <p class="i-desc">
+            グリフィス天文台は、ロサンゼルスのグリフィス公園内にある天文台です。アールデコ調の外観と、ダウンタウンをふくめ市内を一望できます。<br />
+            2006年に、4年に渡る大規模な改築工事が完成し、展示場やシアター、カフェなどが加えられました。また敷地内には映画「理由なき反抗」のロケ地として使用され、天文台の知名度を向上させた功績から、同作品で主演を務めたジェームズ・ディーンの銅像が建てられています。
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
